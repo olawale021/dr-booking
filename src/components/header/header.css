@@ -1,0 +1,151 @@
+/*header.css*/
+.header {
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    position: relative;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-nav {
+    width: 100%;
+  }
+  
+  .menu-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-logo {
+    margin-right: 20px;
+  }
+  
+  .menu-logo img {
+    height: 70px;
+    width: auto;
+  }
+  
+  .main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .main-nav li {
+    margin-right: 30px;
+    font-weight: bold;
+  }
+  
+  .main-nav li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 0;
+    display: block;
+  }
+  
+  .main-nav li:hover a {
+    color: #ddd;
+  }
+  
+  .has-submenu {
+    position: relative;
+  }
+  
+  .has-submenu .fas.fa-chevron-down {
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .has-submenu:hover .fas.fa-chevron-down {
+    transform: rotate(90deg);
+  }
+  
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    display: none;
+  }
+  
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+  
+  .submenu li {
+    margin: 0;
+    padding: 10px 15px;
+  }
+  
+  .submenu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .submenu li:hover a {
+    background-color: #f1f1f1;
+  }
+  
+  .searchbar {
+    position: relative;
+  }
+  
+  .searchbar i {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .togglesearch {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    display: none;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .searchbar:hover .togglesearch {
+    display: block;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .register-btn {
+    margin-left: 20px;
+  }
+  
