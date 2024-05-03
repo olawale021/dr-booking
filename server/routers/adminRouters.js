@@ -1,11 +1,11 @@
 // adminRoutes.js
-const express = require('express');
+const router = require('express').Router()
 const adminController = require('../controllers/adminControllers');
 
-const router = express.Router();
+
 
 // Define routes for admins
-router.post('/register_admin', adminController.registerAdmin);
+router.post('/admin_register',adminController.registerAdmin);
 // router.get('/:id', adminController.getAdminById);
 // Add more routes as needed
 

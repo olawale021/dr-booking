@@ -4,7 +4,12 @@ require('dotenv').config({ path: '../.env.local' });
 
 
 const app = express();
-app.use('/register', require('./routers/adminRouters') );
+app.use(express.json());
+app.use('/admin', require('./routers/adminRouters') );
+app.use('/patient', require('./routers/patientRouters') );
+app.use('/patient', require('./routers/patientRouters') );
+app.use('/doctor', require('./routers/doctorRouters') );
+
 
 // Connect to MongoDB Atlas database
 mongoose.connect(process.env.MONGODB_URI, {
@@ -22,7 +27,7 @@ db.once('open', () => {
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

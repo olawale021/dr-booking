@@ -8,7 +8,7 @@ const doctorSchema = new mongoose.Schema({
   gender: String,
   phoneNumber: String,
   password: { type: String, required: true },
-  address: String,
+  hospitalAddress: String,
   hospital: String,
   specialty: String,
   registrationStatus: { type: String, default: 'pending' },
