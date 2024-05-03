@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import { BrowserRouter as Router} from "react-router-dom"
-import Header from "./components/header/Header"
+import Pages from './pages/Pages';
 
 function App() {
   return (
     <div className='App'>
       <Router>
-        <Header/>
+        <Pages/>
       </Router>
 
     </div>

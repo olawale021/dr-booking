@@ -139,4 +139,67 @@
     display: flex;
   }
   
+  /* Add styles for tablets (landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+      width: 90%;
+      padding: 0 15px;
+    }
   
+    .main-nav {
+      padding-left: 15px;
+    }
+  }
+  
+  /* Add styles for tablets (portrait) */
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
+    .container {
+      width: 90%;
+      padding: 0 15px;
+    }
+  
+    .main-nav {
+      padding-left: 15px;
+    }
+  
+    .main-nav li {
+      margin-right: 20px;
+    }
+  }
+  
+  /* Add styles for mobile devices */
+  @media only screen and (max-width: 480px) {
+    .container {
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .main-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+    }
+  
+    .main-nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .has-submenu {
+      width: 100%;
+    }
+  
+    .submenu {
+      width: 100%;
+      left: initial;
+      top: initial;
+      position: static;
+      display: none;
+    }
+  
+    .has-submenu:hover .submenu {
+      display: block;
+      position: static;
+      margin-top: 10px;
+    }
+  }
