@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // If you're using React Router
+import { Link } from 'react-router-dom';
 import "./header.css"
 import { ChevronDown,Lock, User } from 'react-feather';
 import Logo from './logo.png'
@@ -7,13 +7,13 @@ import Logo from './logo.png'
 
 const Header = () => {
   return (
-    <header className="header header-custom header-fixed header-one">
+    <header className="header">
       <div className="container">
-        <nav className="navbar navbar-expand-lg header-nav">
+        <nav className="navbar header-nav">
           <div className="main-menu-wrapper">
             <div className="menu-header">
               <Link to="/" className="menu-logo">
-                <img src={Logo} className="img-fluid" alt="Logo" style={{ width: '150px', height: '70px' }}/>
+                <img src={Logo} alt="Logo"/>
               </Link>
             </div>
             <ul className="main-nav">
@@ -64,7 +64,7 @@ const Header = () => {
               </li>
                 <li className="register-btn">
                     <Link
-                        to="/patient_registration"
+                        to="/patient_register"
                         className="btn reg-btn"
                         style={{
                         backgroundColor: '#0F82FD',
@@ -72,7 +72,7 @@ const Header = () => {
                         padding: '12px 24px',
                         borderRadius: '5px',
                         textDecoration: 'none',
-                        display: 'inline-block',
+                        display: 'flex',
                         transition: 'background-color 0.3s, color 0.3s', // Add smooth transition effect
                         }}
                         onMouseOver={(e) => {
@@ -84,7 +84,7 @@ const Header = () => {
                         e.target.style.color = '#FFFFFF'; // Change back to original text color on mouse out
                         }}
                     >
-                        <i><User size={15} color='black' /></i>Register
+                        <i style={{marginRight: '5px'}}><User size={18} /></i>Register
                     </Link>
                     </li>
                     <li className="register-btn">
@@ -97,7 +97,7 @@ const Header = () => {
                         padding: '12px 24px',
                         borderRadius: '5px',
                         textDecoration: 'none',
-                        display: 'inline-block',
+                        display: 'flex',
                         transition: 'background-color 0.3s, color 0.3s', // Add smooth transition effect
                         }}
                         onMouseOver={(e) => {
@@ -109,7 +109,7 @@ const Header = () => {
                         e.target.style.color = '#0F82FD'; // Change back to original text color on mouse out
                         }}
                     >
-                        <i><Lock size={15} color='black' /></i>Login
+                        <i style={{marginRight: '5px'}}><Lock size={18} /></i>Login
                     </Link>
                 </li>
             </ul>

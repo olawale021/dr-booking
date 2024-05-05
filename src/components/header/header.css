@@ -5,44 +5,49 @@
 
 .header {
     background-color: #F2F6F6;
-    padding: 10px 0;
     border-bottom: 1px solid #F2F6F6;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     display: flex;
-  }
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center; /* Vertically center items */
+}
   
-  .container {
-    width: 90%;
-    max-width: 1140px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header-nav {
+.container {
     width: 100%;
-  }
-  
-  .menu-header {
+    max-width: 1140px;
+    margin: 0 10vh;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-  }
+}
+  
+.menu-header {
+    margin-left: auto;
+}
+
+.menu-logo {
+    display: flex; /* Make the logo container a flexbox */
+    align-items: center; /* Vertically center logo */
+}
+
+.menu-logo img {
+  width: 280px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 60px;
+}
   
 
-  .main-nav {
+.main-nav {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    padding: 10px 0 0 35px;
+    padding-top: 25px;
     
-  }
+}
   
   .main-nav li {
-    margin-right: 30px;
+    margin-right: 50px;
     font-weight: bold;
   }
   
@@ -59,6 +64,7 @@
   
   .has-submenu {
     position: relative;
+    display: flex;
   }
   
   .has-submenu .fas.fa-chevron-down {
