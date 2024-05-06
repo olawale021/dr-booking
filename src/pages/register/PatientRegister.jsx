@@ -36,11 +36,10 @@ function PatientRegister() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = {
-            firstName: event.target.firstName.value,
-            lastName: event.target.lastName.value,
+            
             phoneNumber: event.target.phoneNumber.value,
             password: event.target.password.value,
-            gender: selectedGender,
+            
             address: {
                 street: event.target['address.street'].value,
                 city: event.target['address.city'].value,
