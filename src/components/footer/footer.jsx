@@ -16,7 +16,7 @@ const Footer = () => {
                         <div className="col-lg-3 col-md-4">
                             <div className="footer-widget footer-about">
                                 <div className="footer-logo">
-                                    <a href="index.html"><img src={Logo} alt="logo" style={{width: '200px'}} /></a>
+                                    <a href="index.html"><img src={Logo} alt="logo" style={{width: '150px'}} /></a>
                                 </div>
                                 <div className="footer-about-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -30,11 +30,11 @@ const Footer = () => {
                                 <div className="col-lg-3 col-md-4">
                                     <div className="footer-widget footer-menu">
                                         <h2 className="footer-title">For Patients</h2>
-                                        <ul>
-                                            <li><a href="search.html">Search for Doctors</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                        </ul>
+                                        
+                                            <li><Link to=''>Search for Doctors</Link></li>
+                                            <li><Link to=''>Login</Link></li>
+                                            <li><Link to=''>Register</Link></li>
+                                        
                                     </div>
                                 </div>
                                 {/* For Doctors */}
@@ -104,8 +104,8 @@ const Footer = () => {
                                 {/* Footer Menu */}
                                 <div className="copyright-menu">
                                     <ul className="policy-menu">
-                                        <li><Link href="privacy-policy.html">Privacy Policy</Link></li>
-                                        <li><a href="terms-condition.html">Terms and Conditions</a></li>
+                                        <Link to=''>Privacy Policy</Link>  
+                                        <Link to=''>Terms and Conditions</Link>
                                     </ul>
                                 </div>
                             </div>

@@ -1,11 +1,6 @@
 .footer {
     background-color: #F2F6F6;
-    padding-left: 15px; /* Adjust the left padding as needed */
-    padding-right: 15px; /* Optional: Adjust the right padding */
-}
-.footer.footer-one .footer-bottom .copyright .copyright-text p {
-    color: #6B7280;
-    display: inline-flex;
+  
 }
 
 .footer-top {
@@ -18,20 +13,23 @@
     margin-bottom: 20px; /* Add some bottom margin to separate each widget */
 }
 
-.footer-widget ul {
+.footer-widget li {
     list-style: none;
+    text-decoration: none;
+    
 }
 
 .footer-title {
-    font-size: 20px; /* Adjust the font size as needed */
+    font-size: 18px; /* Adjust the font size as needed */
     font-weight: bold;
     margin-bottom: 25px;
 }
 
-.footer-menu ul {
+.footer-menu a {
     padding-left: 0; /* Remove default padding from the ul element */
     list-style: none; /* Remove default list styles */
     text-decoration: none;
+    color: black;
 }
 
 .footer-menu li {
@@ -48,12 +46,19 @@
     padding-bottom: 20px; /* Adjust the bottom padding of the footer bottom */
 }
 
-.policy-menu li {
-    display: inline-block; /* Display policy menu items inline */
-    margin-right: 10px; /* Adjust the spacing between policy menu items */
+.policy-menu a{
+    list-style: none;
+    text-align: right; 
+    text-decoration: none;
+    color: black;
 }
 
-.policy-menu li:last-child {
+.policy-menu {
+    margin-right: 20px;
+    justify-content: space-between;
+}
+
+.policy-link:last-child {
     margin-right: 0; /* Remove margin from the last policy menu item */
 }
 

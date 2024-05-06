@@ -29,7 +29,7 @@ const createRefreshToken = (patient) => {
 const registerPatient = async (req, res) => {
     try {
         // Extract patient details from request body
-        const {   firstName, lastName, password,dateOfBirth, gender, phoneNumber, address } = req.body;
+        const {   firstName, lastName, password, dateOfBirth, gender, phoneNumber, address } = req.body;
 
         // Check if the username is already taken
         const existingPatient = await Patient.findOne({ phoneNumber: phoneNumber});
@@ -48,7 +48,12 @@ const registerPatient = async (req, res) => {
             dateOfBirth,
             gender,
             phoneNumber,
-            address
+            address: {
+                street: address.street,
+                city: address.city,
+                state: address.state,
+                postcode: address.postcode
+            }
         });
 
         // Save the patient to the database
