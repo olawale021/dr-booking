@@ -32,7 +32,7 @@ function DoctorRegForm() {
         event.preventDefault();
         try {
             console.log(formData);
-            const response = await axios.post('api/doctor/register', formData);
+            const response = await axios.post('/api/doctor/register', formData);
             console.log(response.data); // Log the response from the backend
             
             // Display success message with SweetAlert
