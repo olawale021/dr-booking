@@ -1,12 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config({ path: '../.env.local' });
 
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 app.use('/admin', require('./routers/adminRouters') );
-app.use('/patient', require('./routers/patientRouters') );
 app.use('/patient', require('./routers/patientRouters') );
 app.use('/doctor', require('./routers/doctorRouters') );
 
@@ -27,7 +28,7 @@ db.once('open', () => {
 
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

@@ -1,45 +1,35 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/footer';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import axios from 'axios';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Radio } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Image01 from './image01.png';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import axios from 'axios';
+import Link from '@mui/material/Link';
+import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-
-const defaultTheme = createTheme();
-
-function PatientRegister() {
+function PatientRegistration() {
     const [selectedGender, setSelectedGender] = useState('');
-    const [showAlert, setShowAlert] = useState(false);
-    const [alertMsg, setAlertMsg] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = {
-            
+            firstName: event.target.firstName.value,
+            lastName: event.target.lastName.value,
             phoneNumber: event.target.phoneNumber.value,
             password: event.target.password.value,
-            
+            gender: selectedGender,
             address: {
                 street: event.target['address.street'].value,
                 city: event.target['address.city'].value,
@@ -49,44 +39,34 @@ function PatientRegister() {
         };
         try {
             console.log(formData);
-            const response = await axios.post('/patient/patient_register', formData);
+            const response = await axios.post('/patient/register', formData);
+            
             console.log(response.data); // Log the response from the backend
+            // Display success message with SweetAlert
+        Swal.fire({
+            icon: 'success',
+            title: 'Registration Successful!',
+            text: 'Navigating to login page...',
+            timer: 2500, // Time in milliseconds
+            timerProgressBar: true,
+            showConfirmButton: false
+        }).then(() => {
+            // Navigate to the login page after 5 seconds
+            window.location.href = '/patient_login';
+        });
             
         } catch (error) {
             console.error('Error:', error);
-            setAlertMsg(error.response.data.msg);
-            setShowAlert(true);
         }
     };
 
     const handleGenderChange = (event) => {
         setSelectedGender(event.target.value);
     };
-
-    return (
-        <>
-            <Header />
-            <ThemeProvider theme={defaultTheme}>
-                <Grid container component="main" sx={{ height: '80vh', paddingRight: '10vh' }}>
-                    <CssBaseline />
-                    <Grid
-                        item
-                        xs={false}
-                        sm={2}
-                        md={6}
-                        sx={{
-                            backgroundImage: `url(${Image01})`,
-                            backgroundRepeat: 'no-repeat',
-                            backgroundColor: (t) =>
-                                t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-                            backgroundSize: '40%',
-                            backgroundPosition: 'center',
-                        }}
-                    />
-                    <Grid item xs={12} sm={8} md={5}>
+  return (
                         <Box
                             sx={{
-                                my: 8,
+                                my: 5,
                                 mx: 4,
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -234,12 +214,7 @@ function PatientRegister() {
                                 </Grid>
                             </Box>
                         </Box>
-                    </Grid>
-                </Grid>
-            </ThemeProvider>
-            <Footer />
-        </>
-    );
+  )
 }
 
-export default PatientRegister;
+export default PatientRegistration
