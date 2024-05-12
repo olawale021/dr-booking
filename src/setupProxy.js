@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://localhost:9000', 
+      target: 'https://dr-booking.vercel.app/', 
       changeOrigin: true,
     })
   );

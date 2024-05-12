@@ -39,7 +39,7 @@ function PatientRegistration() {
         };
         try {
             console.log(formData);
-            const response = await axios.post('/patient/register', formData);
+            const response = await axios.post('api/patient/register', formData);
             
             console.log(response.data); // Log the response from the backend
             // Display success message with SweetAlert
